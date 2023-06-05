@@ -40,6 +40,6 @@ fi
 TOKEN="jIfj6fgOGLR4dE18xBjzhlbjIuuTG3KlrcxK/am/INg="
 
 # 部署 Docker 容器
-docker run -d --restart=always --name tm $IMAGE start accept --token $TOKEN
+sudo docker run -d --restart=always --name tm $IMAGE start accept --token $TOKEN
 
 echo "部署完成"
