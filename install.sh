@@ -8,6 +8,7 @@ then
     curl -fsSL https://get.docker.com -o get-docker.sh
     sudo sh get-docker.sh
     echo "Docker 安装完成"
+    rm get-docker.sh
 else
     echo "Docker 已安装"
 fi
