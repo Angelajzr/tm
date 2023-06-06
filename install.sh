@@ -8,13 +8,13 @@ then
     curl -fsSL https://get.docker.com -o get-docker.sh
     sudo sh get-docker.sh
     echo "Docker 安装完成"
-    rm get-docker.sh
+    sudo rm get-docker.sh
 else
     echo "Docker 已安装"
 fi
 
 # 检查 Docker 是否正在运行
-if ! docker info &> /dev/null
+if ! sudo docker info &> /dev/null
 then
     echo "Docker 未运行，正在启动 Docker 守护程序..."
     sudo systemctl start docker
@@ -22,6 +22,12 @@ then
     echo "Docker 守护程序已启动"
 else
     echo "Docker 正在运行"
+fi
+
+# 检查是否已安装 traffmonetizer/cli 容器
+if sudo docker container ls --all --filter "name=tm" | grep -q "tm"; then
+    echo "traffmonetizer/cli 容器已安装"
+    exit 0
 fi
 
 # 检查架构
