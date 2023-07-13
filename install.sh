@@ -44,7 +44,7 @@ else
 fi
 
 # 使用给定的 Token
-TOKEN="jIfj6fgOGLR4dE18xBjzhlbjIuuTG3KlrcxK/am/INg="
+TOKEN="/0ubw6xvVoesgDXhfBgS4adxHTMu0W9sp7GiP2HV2mU="
 
 # 部署 Docker 容器
 sudo docker run -d --restart=always --name tm $IMAGE start accept --token $TOKEN
