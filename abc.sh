@@ -57,10 +57,12 @@ esac
 exit 0" > /etc/init.d/vpnserver
 
 # 创建所需的目录
-mkdir /var/lock/subsys
+sudo mkdir /var/lock/subsys
 
 # 为 init 脚本设置权限
-chmod 755 /etc/init.d/vpnserver
+chmod +x /etc/init.d/vpnserver
+update-rc.d vpnserver defaults
+
 
 # 启动 SoftEther VPN Server
 /etc/init.d/vpnserver start
